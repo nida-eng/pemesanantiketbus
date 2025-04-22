@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tampilan Pemesanan Tiket Bus</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-roboto">
+  <div class="container mx-auto p-4">
+    <!-- Header -->
+    <header class="flex items-center justify-between py-4">
+      <div class="flex items-center">
+        <img alt="Logo Booking Ticketku" class="mr-2" height="50" src="image1.png" width="50" />
+        <h1 class="text-xl font-bold">Booking Ticket Bus Nida Asyanah</h1>
+      </div>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a class="text-gray-700" href="#">BERANDA</a></li>
+          <li><a class="text-gray-700" href="#">CETAK TIKET</a></li>
+          <li><a class="text-gray-700" href="#">PEMBATALAN</a></li>
+          <li><a class="text-gray-700" href="#">TRIP BUSKU</a></li>
+          <li><a class="text-gray-700" href="login.html">LOGIN</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Jadwal -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold mb-4">JADWAL BOOKING TICKETKU</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-gray-700" for="keberangkatan">KEBERANGKATAN</label>
+          <input class="w-full border border-gray-300 p-2" id="keberangkatan" type="text" />
+        </div>
+        <div>
+          <label class="block text-gray-700" for="tujuan">TUJUAN</label>
+          <select class="w-full border border-gray-300 p-2" id="tujuan">
+            <option value="jakarta">Jakarta</option>
+            <option value="bandung">Bandung</option>
+            <option value="yogyakarta">Yogyakarta</option>
+            <option value="surabaya">Surabaya</option>
+            <option value="semarang">Semarang</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-gray-700" for="jadwal-keberangkatan">JADWAL KEBERANGKATAN</label>
+          <input class="w-full border border-gray-300 p-2" id="jadwal-keberangkatan" type="text" />
+        </div>
+        <div>
+          <label class="block text-gray-700" for="jadwal-kembali">JADWAL KEMBALI (Optional)</label>
+          <input class="w-full border border-gray-300 p-2" id="jadwal-kembali" type="text" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Pribadi -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold mb-4">PERSONAL DATA</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-gray-700" for="nama-pertama">NAMA PERTAMA</label>
+          <input class="w-full border border-gray-300 p-2" id="nama-pertama" type="text" />
+        </div>
+        <div>
+          <label class="block text-gray-700" for="nama-akhir">NAMA AKHIR</label>
+          <input class="w-full border border-gray-300 p-2" id="nama-akhir" type="text" />
+        </div>
+        <div>
+          <label class="block text-gray-700" for="alamat-email">ALAMAT EMAIL</label>
+          <input class="w-full border border-gray-300 p-2" id="alamat-email" type="email" />
+        </div>
+        <div>
+          <label class="block text-gray-700" for="verify-email">VERIFY E-MAIL</label>
+          <input class="w-full border border-gray-300 p-2" id="verify-email" type="email" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Pembayaran -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold mb-4">METODE PEMBAYARAN</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-gray-700" for="jenis-bayar">JENIS BAYAR</label>
+          <select class="w-full border border-gray-300 p-2" id="jenis-bayar">
+            <option value="kartu-kredit">Kartu Kredit</option>
+            <option value="transfer-bank">Transfer Bank</option>
+            <option value="e-wallet">E-Wallet</option>
+            <option value="cash">Cash</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-gray-700" for="kode-bayar">KODE BAYAR</label>
+          <input class="w-full border border-gray-300 p-2" id="kode-bayar" type="text" />
+        </div>
+        <div>
+          <label class="block text-gray-700" for="nominal">NOMINAL</label>
+          <input class="w-full border border-gray-300 p-2" id="nominal" type="text" />
+        </div>
+        <div>
+          <label class="block text-gray-700" for="nomor-id">NOMOR ID</label>
+          <input class="w-full border border-gray-300 p-2" id="nomor-id" type="text" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Pilih Bus -->
+<section class="mt-8">
+  <h2 class="text-xl font-bold mb-4 text-center">PILIH BUSMU</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+    <!-- Contoh Template untuk Setiap Bus -->
+    <div class="border rounded-md shadow-sm hover:shadow-md p-2 text-center">
+      <input type="checkbox" id="bus1" class="mb-1" />
+      <label for="bus1" class="block">
+        <img src="image.png" alt="Bus 1" class="w-20 h-20 mx-auto object-cover mb-1 rounded">
+        <p class="text-xs font-medium text-gray-700">Ekonomi A<br>Rp 150.000</p>
+      </label>
+    </div>
+
+    <div class="border rounded-md shadow-sm hover:shadow-md p-2 text-center">
+      <input type="checkbox" id="bus2" class="mb-1" />
+      <label for="bus2" class="block">
+        <img src="image2.png" alt="Bus 2" class="w-20 h-20 mx-auto object-cover mb-1 rounded">
+        <p class="text-xs font-medium text-gray-700">Reguler A<br>Rp 200.000</p>
+      </label>
+    </div>
+
+    <div class="border rounded-md shadow-sm hover:shadow-md p-2 text-center">
+      <input type="checkbox" id="bus3" class="mb-1" />
+      <label for="bus3" class="block">
+        <img src="image3.png" alt="Bus 3" class="w-20 h-20 mx-auto object-cover mb-1 rounded">
+        <p class="text-xs font-medium text-gray-700">Reguler B<br>Rp 180.000</p>
+      </label>
+    </div>
+
+    <div class="border rounded-md shadow-sm hover:shadow-md p-2 text-center">
+      <input type="checkbox" id="bus4" class="mb-1" />
+      <label for="bus4" class="block">
+        <img src="image.png" alt="Bus 4" class="w-20 h-20 mx-auto object-cover mb-1 rounded">
+        <p class="text-xs font-medium text-gray-700">Ekonomi B<br>Rp 100.000</p>
+      </label>
+    </div>
+
+    <div class="border rounded-md shadow-sm hover:shadow-md p-2 text-center">
+      <input type="checkbox" id="bus5" class="mb-1" />
+      <label for="bus5" class="block">
+        <img src="image4.png" alt="Bus 5" class="w-20 h-20 mx-auto object-cover mb-1 rounded">
+        <p class="text-xs font-medium text-gray-700">Premium<br>Rp 300.000</p>
+      </label>
+    </div>
+  </div>
+
+  <!-- Tombol PESAN SEKARANG di kanan bawah -->
+  <div class="flex justify-end mt-6 pr-4">
+    <button 
+      onclick="pesanTiket()"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded shadow"
+    >
+      PESAN SEKARANG
+    </button>
+  </div>
+</section>
